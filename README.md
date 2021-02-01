@@ -1,6 +1,6 @@
-#ncov-phyloset
+# ncov-phyloset
 
-##SYNOPSIS
+## SYNOPSIS
 
 This tool set is designed to roughly annotate highly conserved genomes and generate pseudo-alignments of the called gene sequences. Additionally it includes the option to generate conserved core gene alignments containing only isolates present in all analyzed genomes.
 
@@ -10,8 +10,8 @@ There are two main components to this pipeline:
 1. `extract_sequences.py`, which creates an output file for each genome with the requested sequences.  This step can be parallelized by the user using their own code or the provided Sun Grid Engine subission scripts `run_jobs.pl` and/or `extract_seqs_array.sh`
 2. `build_gene_files.py`, which uses fasta files produced by the previous step to build custom alignment sets.
 
-##USAGE
-####`extract_sequences.py`
+## USAGE
+#### `extract_sequences.py`
 ```
 usage: extract_sequences.py [-h] --reference REFERENCE --query QUERY --name
                             NAME [--type [TYPE]] [--retain]
@@ -46,7 +46,7 @@ Example tags are highlighted in bold below:
                      /**db_xref**="GeneID:437405780"
 ```
 
-####`build_gene_files.py`
+#### `build_gene_files.py`
 ```
 usage: build_gene_files.py [-h] --reference REFERENCE [--type [TYPE]]
                            [--conserved] [--min_cov [MIN_COV]] [--genome]
@@ -72,18 +72,18 @@ This function always overwrites existing gene files, so be sure to copy the file
 The `--conserved` flag specifies whether all sequences that meet the `--min_cov` value are included (default) or if only genomes which contained all targets at the desired cutoff are included (flag activated).
 The `--min_cov` value controls how much of the sequence must be present to consider the sequence present. This value is the fraction of non-ambiguous base calls in the query sequence to the length annotated on the provided reference.
 
-##DATA SOURCES
+## DATA SOURCES
 This program was designed to work with nucleotide FASTA sequence data downloaded from the [NCBI SARS-CoV-2 Resources](https://www.ncbi.nlm.nih.gov/sars-cov-2/) page.  It should be compatible with other single genome fasta format files.
 The NCBI reference genome `NC_045512.2.gb` is included in the repository for your convenience.
 
-##CAVEATS
+## CAVEATS
 All sites which would result in an insertion relative to the reference sequence are ommitted from the result.
 The resulting alignment files are not true multiple alignments.  They are all aligned relative to the reference genome only.
 
 
-##DEPENDENCIES
+## DEPENDENCIES
 Python3 with Biopython.
 mafft aligner in path.
 
-##Disclaimer
+## Disclaimer
 This software is provided for research purposes only.
