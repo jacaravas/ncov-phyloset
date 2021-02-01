@@ -31,8 +31,10 @@ optional arguments:
   --overwrite           Overwrite existing output files. Default=False
 ```
 Output files will be written as fasta files to a directory paradoxically named "input"
+
 The `--type` argument specifies which genbank tag to look for to include.  Only the presence of the tag is evaluated, not the value.  The default type "product" has been tested, but others have not.  The name of a sequence in the resulting fasta files will be the value associated with the provided tag.  Spaces, punctuation, and most non-alphanumeric chracters are removed from the tag value.
-Example tags are highlighted in bold below:
+
+Example tags are highlighted in between "**" below:
 ```
      CDS             join(266..13468,13468..21555)
                      /**gene**="ORF1ab"
@@ -68,21 +70,27 @@ optional arguments:
                         switch for this file. Default=False
 ```
 Output files are written to the "gene_alignments" directory.
+
 This function always overwrites existing gene files, so be sure to copy the files another directory if you wish to preserve existing files.
+
 The `--conserved` flag specifies whether all sequences that meet the `--min_cov` value are included (default) or if only genomes which contained all targets at the desired cutoff are included (flag activated).
+
 The `--min_cov` value controls how much of the sequence must be present to consider the sequence present. This value is the fraction of non-ambiguous base calls in the query sequence to the length annotated on the provided reference.
 
 ## DATA SOURCES
 This program was designed to work with nucleotide FASTA sequence data downloaded from the [NCBI SARS-CoV-2 Resources](https://www.ncbi.nlm.nih.gov/sars-cov-2/) page.  It should be compatible with other single genome fasta format files.
+
 The NCBI reference genome `NC_045512.2.gb` is included in the repository for your convenience.
 
 ## CAVEATS
 All sites which would result in an insertion relative to the reference sequence are ommitted from the result.
+
 The resulting alignment files are not true multiple alignments.  They are all aligned relative to the reference genome only.
 
 
 ## DEPENDENCIES
 Python3 with Biopython.
+
 mafft aligner in path.
 
 ## Disclaimer
