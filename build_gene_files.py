@@ -66,7 +66,7 @@ for file in fasta_files:
             id = matches.group(1)
             description = matches.group(2)
             ##  Output whole genome alignment if requested
-            if description == "wholegenome":
+            if description == "wholegenome" and args.genome == True:
                 sequence = record.seq.upper()
                 print (f'>{id}\n{sequence}', file = file_handles["wholegenome"])
             ##  Make sure sequence is in our desired set
