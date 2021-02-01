@@ -30,7 +30,7 @@ optional arguments:
   --genome              Output whole genome sequence. Default=False
   --overwrite           Overwrite existing output files. Default=False
 ```
-Output files will be written as fasta files to a directory paradoxically named "input"
+Output files will be written as fasta files to the directory named "output"
 
 The `--type` argument specifies which genbank tag to look for to include.  Only the presence of the tag is evaluated, not the value.  The default type "product" has been tested, but others have not.  The name of a sequence in the resulting fasta files will be the value associated with the provided tag.  Spaces, punctuation, and most non-alphanumeric chracters are removed from the tag value.
 
