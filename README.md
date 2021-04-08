@@ -83,7 +83,7 @@ This program was designed to work with nucleotide FASTA sequence data downloaded
 The NCBI reference genome `NC_045512.2.gb` is included in the repository for your convenience.
 
 ## CAVEATS
-All sites which would result in an insertion relative to the reference sequence are ommitted from the result.
+All sites which would result in an insertion relative to the reference sequence are omitted from the result.
 
 The resulting alignment files are not true multiple alignments.  They are all aligned relative to the reference genome only.
 
